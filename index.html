@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mobile Vikings - Gsm Fix</title>
+    <title>Mobile Vikings - Touch Fix</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
-        /* Voorkom scrollen en zet de basis */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             background-color: #000;
-            overflow: hidden; /* Houdt alles netjes binnen het scherm */
-            font-family: 'Bebas Neue', sans-serif;
-        }
-
-        /* De achtergrond met rode bolletjes */
-        body {
             background-image: radial-gradient(#ff0000 1.2px, transparent 1.2px);
             background-size: 20px 20px;
+            color: #fff;
+            font-family: 'Bebas Neue', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between; /* Verdeelt content over de hoogte */
-            padding: 40px 0;
-            box-sizing: border-box;
+            justify-content: space-between;
+            overflow: hidden;
         }
 
         .content {
@@ -37,57 +31,56 @@
         }
 
         h1 {
-            /* Gebruik vw (viewport width) zodat de tekst nooit te breed wordt */
             font-size: 16vw; 
             line-height: 0.9;
-            color: #fff;
-            text-transform: uppercase;
-            margin: 0 0 20px 0;
-            /* Subtiele rode outline/schaduw */
+            margin: 0 0 30px 0;
             text-shadow: 2px 2px 0px #e30613;
+            text-transform: uppercase;
         }
 
-        /* De knop met de juiste verhoudingen voor gsm */
+        /* De knop met verbeterde touch-states */
         .viking-button {
             background-color: #e30613;
             color: #fff;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.2rem;
-            padding: 12px 0;
+            font-size: 2.5rem;
+            padding: 15px 0;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             text-transform: uppercase;
             width: 100%;
-            max-width: 280px;
+            max-width: 300px;
             cursor: pointer;
-            /* Harde zwarte schaduw zoals in de foto */
-            box-shadow: 4px 4px 0px #000;
-            /* De rode gloed (backdrop) */
-            filter: drop-shadow(0 0 10px rgba(227, 6, 19, 0.8));
-            transition: transform 0.1s;
+            position: relative;
+            
+            /* De 3D schaduw */
+            box-shadow: 6px 6px 0px #000;
+            filter: drop-shadow(0 0 15px rgba(227, 6, 19, 0.7));
+            
+            /* Zorgt voor een vloeiende klik-animatie */
+            transition: all 0.05s linear;
+            
+            /* Voorkom dat de gsm tekst selecteert bij het klikken */
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
+        /* EFFECT OP GSM: De knop zakt fysiek in als je hem aanraakt */
         .viking-button:active {
-            transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0px #000;
+            transform: translate(4px, 4px); /* Schuift naar de plek van de schaduw */
+            box-shadow: 0px 0px 0px #000;   /* Schaduw verdwijnt */
+            filter: drop-shadow(0 0 5px rgba(227, 6, 19, 1));
+            background-color: #b3050f; /* Wordt iets donkerder bij indrukken */
         }
 
         .footer {
-            width: 100%;
-            text-align: center;
-            padding-bottom: 20px;
+            padding-bottom: 30px;
         }
 
         .logo-img {
-            width: 120px; /* Iets kleiner logo voor betere balans */
+            width: 140px;
             height: auto;
-            margin-bottom: 5px;
-        }
-
-        /* Fix voor heel kleine gsm's */
-        @media (max-height: 600px) {
-            h1 { font-size: 14vw; }
-            .viking-button { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -96,7 +89,7 @@
     <div class="content">
         <h1>Haal<br>zoveel<br>mogelijk<br>uit je</h1>
         
-        <button class="viking-button" onclick="return false;">
+        <button class="viking-button" onmousedown="" ontouchstart="">
             Internet
         </button>
     </div>
