@@ -1,168 +1,128 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobile Vikings - Brand Correct</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mobile Vikings - Haal alles uit je data</title>
+    <style>
+        /* 3.1 PRIMARY TYPOGRAPHY: Mr. Alex Bold  */
+        @font-face {
+            font-family: "MrAlex-Bold";
+            src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2") format("woff2");
+            font-weight: bold;
+        }
 
-<style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-/* ========================================= */
-/* 1. FONT LOADING */
-/* ========================================= */
+        html, body {
+            width: 100%;
+            height: 100%;
+            /* Primary Colors: Black #000000 [cite: 218] */
+            background-color: #000000; 
+            color: #ffffff;
+            font-family: "MrAlex-Bold", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
 
-@font-face {
-    font-family: "MrAlex-Bold";
-    src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2") format("woff2");
-    font-weight: 700;
-}
+        /* 5.1 PATTERNS: Supportive function (Opacity 0.4 voor de 5% dominantie regel) [cite: 360, 438] */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* Primary Red: #cd0400 [cite: 223] */
+            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px);
+            background-size: 25px 25px;
+            z-index: 1;
+            opacity: 0.4;
+        }
 
-/* Foro Sans substitute for web */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding: 0 20px;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            background: transparent;
+        }
 
-/* ========================================= */
-/* 2. RESET */
-/* ========================================= */
+        /* Hoofdafbeelding ter vervanging van de h1 tekst */
+        .headline-img {
+            width: 85%;
+            max-width: 450px;
+            height: auto;
+            margin-bottom: 25px;
+            /* Subtiele diepte schaduw [cite: 293] */
+            filter: drop-shadow(4px 4px 0px #000000);
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* 3.3 CALL TO ACTION: Red box met subtiele afgeronde hoeken [cite: 326, 327, 328] */
+        .viking-button {
+            background-color: #cd0400; /* Primary Red #cd0400 [cite: 223] */
+            color: #ffffff; 
+            font-family: "MrAlex-Bold", sans-serif;
+            font-size: 2.2rem;
+            padding: 14px 0;
+            border: none;
+            border-radius: 8px; /* Subtiele afronding [cite: 328] */
+            text-transform: uppercase;
+            width: 100%;
+            max-width: 320px;
+            cursor: pointer;
+            position: relative;
+            
+            /* 3D interactie en diepte [cite: 303] */
+            box-shadow: 6px 6px 0px #000000;
+            filter: drop-shadow(0 0 15px rgba(205, 4, 0, 0.7));
+            transition: all 0.05s linear;
+            user-select: none;
+        }
 
-html, body {
-    width: 100%;
-    height: 100%;
-    background: #000000;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-}
+        /* Interactieve feedback bij aanraking op gsm */
+        .viking-button:active {
+            transform: translate(4px, 4px);
+            box-shadow: 1px 1px 0px #000000;
+        }
 
-/* ========================================= */
-/* 3. SUPPORTIVE PATTERN */
-/* ========================================= */
+        /* 1.7 LOGO POSITIONING: Gecentreerd onderaan [cite: 151, 200] */
+        .footer {
+            position: relative;
+            z-index: 10;
+            padding-bottom: 40px;
+            width: 100%;
+            text-align: center;
+        }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px);
-    background-size: 25px 25px;
-    opacity: 0.25; /* 5% rule feeling */
-    z-index: 1;
-}
-
-/* ========================================= */
-/* 4. CONTAINER */
-/* ========================================= */
-
-.container {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    padding: 0 24px;
-    margin: auto 0;
-    width: 100%;
-}
-
-/* ========================================= */
-/* 5. HEADLINE – BRAND CORRECT */
-/* ========================================= */
-
-h1 {
-    font-family: "MrAlex-Bold", sans-serif;
-    font-size: 14vw;
-    text-transform: uppercase;
-    color: #ffffff;
-
-    line-height: 1.12; /* +7pt principle */
-
-    margin-bottom: 48px;
-
-    /* Brand outline */
-    -webkit-text-stroke: 2px #cd0400;
-
-    /* Red duplicate depth line */
-    text-shadow:
-        6px 6px 0 #cd0400,
-        6px 6px 0 #000000;
-
-    letter-spacing: 2px;
-}
-
-/* ========================================= */
-/* 6. CTA – BRAND GUIDE */
-/* ========================================= */
-
-.viking-button {
-    background-color: #cd0400;
-    color: #ffffff;
-
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-
-    padding: 18px 40px;
-
-    border: none;
-    border-radius: 6px;
-
-    cursor: pointer;
-
-    box-shadow: 8px 8px 0 #000000;
-
-    transition: all 0.08s ease;
-}
-
-.viking-button:active {
-    transform: translate(6px, 6px);
-    box-shadow: 0 0 0 #000000;
-}
-
-/* ========================================= */
-/* 7. FOOTER LOGO */
-/* ========================================= */
-
-.footer {
-    position: relative;
-    z-index: 10;
-    padding-bottom: 40px;
-}
-
-.logo-img {
-    height: 65px;
-    width: auto;
-}
-
-</style>
+        .logo-img {
+            /* Minimale hoogte voor het verticale logo: 65 px  */
+            height: 65px; 
+            width: auto;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
-    <h1>
-        Haal<br>
-        zoveel<br>
-        mogelijk<br>
-        uit je
-    </h1>
+    <div class="container">
+        <img src="image/MB.png" alt="Haal zoveel mogelijk uit je" class="headline-img">
+        
+        <button class="viking-button">
+            Internet
+        </button>
+    </div>
 
-    <button class="viking-button">
-        Internet
-    </button>
-</div>
-
-<div class="footer">
-    <img 
-        src="https://mobilevikings.be/static/img/logo-white.svg" 
-        alt="Mobile Vikings" 
-        class="logo-img">
-</div>
+    <div class="footer">
+        <img src="https://mobilevikings.be/static/img/logo-white.svg" alt="Mobile Vikings" class="logo-img">
+    </div>
 
 </body>
 </html>
