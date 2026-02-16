@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mobile Vikings - Haal alles uit je data</title>
+    <title>Mobile Vikings - Brand Official</title>
     <style>
-        /* 3.1 PRIMARY TYPOGRAPHY: Mr. Alex Bold  */
+        /* Inladen van Mr. Alex Bold volgens Brand Guide [cite: 3] */
         @font-face {
             font-family: "MrAlex-Bold";
             src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2") format("woff2");
@@ -22,8 +22,7 @@
         html, body {
             width: 100%;
             height: 100%;
-            /* Primary Colors: Black #000000 [cite: 218] */
-            background-color: #000000; 
+            background-color: #000000; /* [cite: 3] */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
             display: flex;
@@ -33,13 +32,12 @@
             overflow: hidden;
         }
 
-        /* 5.1 PATTERNS: Supportive function (Opacity 0.4 voor de 5% dominantie regel) [cite: 360, 438] */
+        /* Achtergrondpatroon met rode bolletjes [cite: 3] */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            /* Primary Red: #cd0400 [cite: 223] */
-            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px);
+            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px); /* [cite: 3] */
             background-size: 25px 25px;
             z-index: 1;
             opacity: 0.4;
@@ -53,48 +51,45 @@
             text-align: center;
             margin-top: auto;
             margin-bottom: auto;
-            background: transparent;
         }
 
-        /* Hoofdafbeelding ter vervanging van de h1 tekst */
+        /* Styling voor de headline afbeelding MB.png  */
         .headline-img {
             width: 85%;
             max-width: 450px;
             height: auto;
             margin-bottom: 25px;
-            /* Subtiele diepte schaduw [cite: 293] */
-            filter: drop-shadow(4px 4px 0px #000000);
+            /* Zwarte diepteschaduw conform pagina 24 van brandbook [cite: 5] */
+            filter: drop-shadow(4px 4px 0px #000000); 
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* 3.3 CALL TO ACTION: Red box met subtiele afgeronde hoeken [cite: 326, 327, 328] */
+        /* Call to Action (CTA) Button volgens richtlijnen [cite: 3] */
         .viking-button {
-            background-color: #cd0400; /* Primary Red #cd0400 [cite: 223] */
-            color: #ffffff; 
+            background-color: #cd0400; /* Primary Red [cite: 3] */
+            color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
             font-size: 2.2rem;
             padding: 14px 0;
             border: none;
-            border-radius: 8px; /* Subtiele afronding [cite: 328] */
+            border-radius: 8px; /* Subtiele afronding [cite: 3] */
             text-transform: uppercase;
             width: 100%;
             max-width: 320px;
             cursor: pointer;
             position: relative;
-            
-            /* 3D interactie en diepte [cite: 303] */
-            box-shadow: 6px 6px 0px #000000;
+            box-shadow: 6px 6px 0px #000000; /* [cite: 3] */
             filter: drop-shadow(0 0 15px rgba(205, 4, 0, 0.7));
             transition: all 0.05s linear;
-            user-select: none;
         }
 
-        /* Interactieve feedback bij aanraking op gsm */
         .viking-button:active {
             transform: translate(4px, 4px);
             box-shadow: 1px 1px 0px #000000;
         }
 
-        /* 1.7 LOGO POSITIONING: Gecentreerd onderaan [cite: 151, 200] */
         .footer {
             position: relative;
             z-index: 10;
@@ -103,8 +98,8 @@
             text-align: center;
         }
 
+        /* Minimale logo-hoogte: 65px [cite: 3] */
         .logo-img {
-            /* Minimale hoogte voor het verticale logo: 65 px  */
             height: 65px; 
             width: auto;
         }
@@ -113,7 +108,7 @@
 <body>
 
     <div class="container">
-        <img src="image/MB.png" alt="Haal zoveel mogelijk uit je" class="headline-img">
+        <img src="MB.png" alt="Haal zoveel mogelijk uit je" class="headline-img">
         
         <button class="viking-button">
             Internet
