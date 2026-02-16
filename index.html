@@ -45,6 +45,7 @@
             opacity: 0.35;
         }
 
+        /* Deze container zorgt dat de MB en knop exact centraal staan  */
         .main-content {
             position: relative;
             z-index: 10;
@@ -53,7 +54,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* Verticale centreringsfix */
             padding: 20px;
         }
 
@@ -62,18 +63,19 @@
             max-width: 350px;
             height: auto;
             object-fit: contain;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            /* Diepteschaduw volgens brand guide [cite: 292, 303] */
             filter: drop-shadow(4px 4px 0px #000000);
             pointer-events: none;
         }
 
-        /* VERGROTE KNOP EN TEKST [cite: 66, 328] */
+        /* Button styling volgens Brand Guide [cite: 327, 328] */
         .viking-button {
             background-color: #cd0400; /* Primary Red [cite: 223] */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
-            font-size: 2.5rem; /* Tekst groter gemaakt */
-            padding: 18px 0; /* Padding vergroot voor de grotere tekst */
+            font-size: 5rem;
+            padding: 18px 0;
             border: none;
             border-radius: 8px; /* Subtle round corners [cite: 328] */
             text-transform: uppercase;
@@ -92,11 +94,12 @@
             box-shadow: 0px 0px 0px #000000;
         }
 
+        /* Logo onderaan gecentreerd [cite: 151, 200] */
         .footer {
             position: relative;
             z-index: 10;
             width: 100%;
-            padding-bottom: 30px;
+            padding-bottom: 40px;
             display: flex;
             justify-content: center;
         }
