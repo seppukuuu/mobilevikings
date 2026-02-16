@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mobile Vikings - MrAlex Font</title>
+    <title>Mobile Vikings - Mr Alex Edition</title>
     <style>
-        /* Het nieuwe font inladen */
+        /* Het Mr Alex font inladen via jouw links */
         @font-face {
             font-family: "MrAlex-Regular";
             src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.eot");
@@ -16,16 +16,22 @@
             url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.svg#MrAlex-Regular")format("svg");
         }
 
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             background-color: #000;
-            /* Rode bolletjes op de achtergrond */
+            /* De rode bolletjes direct op de body */
             background-image: radial-gradient(#ff0000 1.2px, transparent 1.2px);
             background-size: 20px 20px;
             color: #fff;
+            /* Mr Alex als standaard font voor de hele pagina */
             font-family: "MrAlex-Regular", sans-serif;
             display: flex;
             flex-direction: column;
@@ -42,16 +48,15 @@
         }
 
         h1 {
-            /* Gebruik vw voor perfecte schaling op gsm */
             font-size: 15vw; 
             line-height: 1.0;
             margin: 0 0 35px 0;
             text-transform: uppercase;
-            /* De witte letters met de rode outline schaduw */
+            font-family: "MrAlex-Regular", sans-serif;
+            /* De rode schaduw aangepast aan de dikte van Mr Alex */
             text-shadow: 2.5px 2.5px 0px #e30613;
         }
 
-        /* De knop met feedback */
         .viking-button {
             background-color: #e30613;
             color: #fff;
@@ -65,18 +70,13 @@
             max-width: 300px;
             cursor: pointer;
             position: relative;
-            
-            /* De 3D zwarte schaduw */
             box-shadow: 6px 6px 0px #000;
-            /* De rode gloed */
             filter: drop-shadow(0 0 12px rgba(227, 6, 19, 0.8));
-            
             transition: all 0.05s linear;
             user-select: none;
-            -webkit-tap-highlight-color: transparent;
         }
 
-        /* Actieve klik-staat voor gsm */
+        /* Klik effect voor mobiel */
         .viking-button:active {
             transform: translate(4px, 4px);
             box-shadow: 0px 0px 0px #000;
@@ -85,11 +85,23 @@
 
         .footer {
             padding-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
 
         .logo-img {
             width: 150px;
             height: auto;
+        }
+
+        /* De merknaam onder het logo ook in Mr Alex */
+        .brand-name {
+            font-family: "MrAlex-Regular", sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -105,6 +117,7 @@
 
     <div class="footer">
         <img src="https://mobilevikings.be/static/img/logo-white.svg" alt="Mobile Vikings" class="logo-img">
+        <div class="brand-name">Møbile Vikings</div>
     </div>
 
 </body>
