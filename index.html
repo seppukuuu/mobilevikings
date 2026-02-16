@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mobile Vikings - Brand Official</title>
     <style>
-        /* 3.1 PRIMARY TYPOGRAPHY: Mr. Alex Bold */
+        /* 1. TYPOGRAFIE INLADEN */
         @font-face {
             font-family: "MrAlex-Bold";
             src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2") format("woff2");
@@ -19,20 +19,23 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        /* 2. BASIS STYLING & KLEUREN */
         html, body {
+            margin: 0;
+            padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #000000; /* Primary color: Black [cite: 218] */
+            background-color: #000000; /* Primary Black [cite: 218] */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            overflow: hidden;
+            overflow-x: hidden; /* Voorkomt zijwaarts scrollen door de grote afbeelding */
         }
 
-        /* 5.1 PATTERNS: Supportive function (Opacity 0.4 voor de 5% dominantie regel [cite: 271]) */
+        /* 3. ACHTERGROND PATROON (Supportive role, max 5% rule) */
         body::before {
             content: "";
             position: fixed;
@@ -40,32 +43,34 @@
             background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px); /* Primary Red [cite: 223] */
             background-size: 25px 25px;
             z-index: 1;
-            opacity: 0.4;
+            opacity: 0.35; /* Supportive role [cite: 438] */
         }
 
         .container {
             position: relative;
             z-index: 10;
             width: 100%;
+            padding: 0 10px;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            flex-grow: 1;
         }
 
-        /* EXTRA GROTE STYLING VOOR MB.PNG */
+        /* 4. HEADLINE AFBEELDING - MAXIMAAL GROOT GEMAAKT */
         .headline-img {
-            width: 110%; /* Vergroot naar over-size breedte */
-            max-width: 900px; /* Ruimere limiet voor grote schermen */
+            width: 120%; /* Groter dan de schermbreedte voor impact */
+            max-width: 800px; /* Limiet voor grotere schermen */
             height: auto;
-            margin-bottom: 30px;
-            /* Zwarte diepteschaduw conform brandbook pagina 24 [cite: 303] */
-            filter: drop-shadow(6px 6px 0px #000000); 
             display: block;
+            margin: 0 auto 20px auto;
+            /* Schaduw voor diepte volgens brand guide  */
+            filter: drop-shadow(6px 6px 0px #000000);
         }
 
-        /* 3.3 CALL TO ACTION: Red box met subtiele ronde hoeken [cite: 328] */
+        /* 5. CALL TO ACTION (CTA) BUTTON */
         .viking-button {
             background-color: #cd0400; /* Primary Red [cite: 223] */
             color: #ffffff;
@@ -73,29 +78,31 @@
             font-size: 2.2rem;
             padding: 16px 0;
             border: none;
-            border-radius: 8px; /* Subtiele afronding [cite: 328] */
+            border-radius: 8px; /* Subtle round corners [cite: 328] */
             text-transform: uppercase;
             width: 90%;
             max-width: 320px;
             cursor: pointer;
             position: relative;
+            
+            /* 3D effect en interactie  */
             box-shadow: 6px 6px 0px #000000;
-            filter: drop-shadow(0 0 15px rgba(205, 4, 0, 0.7));
+            filter: drop-shadow(0 0 15px rgba(205, 4, 0, 0.6));
             transition: all 0.05s linear;
+            user-select: none;
         }
 
+        /* Touch feedback */
         .viking-button:active {
             transform: translate(4px, 4px);
-            box-shadow: 1px 1px 0px #000000;
+            box-shadow: 0px 0px 0px #000000;
         }
 
-        /* 1.7 LOGO POSITIONING: Gecentreerd [cite: 151] */
+        /* 6. LOGO POSITIONING */
         .footer {
             position: relative;
             z-index: 10;
             padding-bottom: 40px;
-            width: 100%;
-            text-align: center;
         }
 
         .logo-img {
@@ -107,7 +114,7 @@
 <body>
 
     <div class="container">
-        <img src="MB.png" alt="Haal zoveel mogelijk uit je" class="headline-img">
+        <img src="MB.png" alt="Haal alles uit je data" class="headline-img">
         
         <button class="viking-button">
             Internet
