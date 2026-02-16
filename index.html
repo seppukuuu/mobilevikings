@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mobile Vikings - Haal alles uit je internet</title>
+    <title>Mobile Vikings - Brand Specs</title>
     <style>
-        /* 3.1 PRIMARY TYPOGRAPHY: Mr. Alex Bold */
+        /* Inladen van Mr. Alex Bold - Brand Defining Font [cite: 278] */
         @font-face {
             font-family: "MrAlex-Bold";
             src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2") format("woff2");
@@ -22,8 +22,8 @@
         html, body {
             width: 100%;
             height: 100%;
-            background-color: #000000; /* [cite: 1132] */
-            color: #ffffff;
+            background-color: #000000; /* Primary Color: Black [cite: 218] */
+            color: #ffffff; /* Text Fill: C0 M0 Y0 K0 [cite: 224, 297] */
             font-family: "MrAlex-Bold", sans-serif;
             display: flex;
             flex-direction: column;
@@ -32,16 +32,15 @@
             overflow: hidden;
         }
 
-        /* ACHTERGROND MET BOLLETJES (PATTERN) OVERAL */
+        /* Achtergrond patroon (Supportive function, max 5% rule) [cite: 269, 271, 360] */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            /* Primary Red dots  */
-            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px);
+            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px); /* Primary Red [cite: 223] */
             background-size: 25px 25px;
             z-index: 1;
-            opacity: 0.4;
+            opacity: 0.35;
         }
 
         .container {
@@ -52,55 +51,66 @@
             text-align: center;
             margin-top: auto;
             margin-bottom: auto;
-            background: transparent; /* Verwijder zwarte box */
         }
 
         h1 {
+            font-family: "MrAlex-Bold", sans-serif;
             font-size: 14vw; 
             text-transform: uppercase;
-            color: #ffffff;
-            /* BRAND GUIDE SPACING: Line spacing is 7 pts more than the font size  */
-            /* In CSS vertalen we dit naar een ruimere line-height */
-            line-height: 1.1; 
-            margin-bottom: 30px;
-            /* Official red dropshadow line [cite: 1214] */
-            text-shadow: 3px 3px 0px #cd0400; 
+            color: #ffffff; /* Fill: C0 M0 Y0 K0 [cite: 297] */
+            
+            /* REGELAFSTAND: Line spacing is 7 pts more than font size  */
+            /* 14vw op mobiel is ~55-60px. +7pt (~9px) geeft een line-height van ~1.15 */
+            line-height: 1.15; 
+            
+            margin-bottom: 35px;
+
+            /* TYPO IN OUTLINES & RED DROPSHADOW [cite: 292, 298, 303] */
+            /* Outline kleur: C0 M97 Y100 K3 (Red) [cite: 300] */
+            -webkit-text-stroke: 1.5px #cd0400; 
+            
+            /* Schaduw/Duplicate kleur: C30 M20 Y30 K100 (Black) [cite: 302] */
+            text-shadow: 4px 4px 0px #000000; 
         }
 
-        /* De knop (CTA) [cite: 1241] */
+        /* De interactieve knop (CTA in Red Box) [cite: 327] */
         .viking-button {
-            background-color: #cd0400; /*  */
+            background-color: #cd0400; /* Primary Red [cite: 223] */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
             font-size: 2.2rem;
-            padding: 14px 0;
+            padding: 16px 0;
             border: none;
-            border-radius: 8px; /* Subtle round corners [cite: 1242] */
+            border-radius: 8px; /* Subtle round corners [cite: 328] */
             text-transform: uppercase;
             width: 100%;
             max-width: 320px;
             cursor: pointer;
+            position: relative;
+            
+            /* 3D effect en interactie */
             box-shadow: 6px 6px 0px #000000;
-            filter: drop-shadow(0 0 15px rgba(205, 4, 0, 0.7));
+            filter: drop-shadow(0 0 15px rgba(205, 4, 0, 0.6));
             transition: all 0.05s linear;
+            user-select: none;
         }
 
+        /* Feedback bij indrukken op gsm */
         .viking-button:active {
             transform: translate(4px, 4px);
-            box-shadow: 1px 1px 0px #000000;
+            box-shadow: 0px 0px 0px #000000;
+            background-color: #a30300; /* Iets donkerder rood bij klik */
         }
 
-        /* Enkel het logo onderaan [cite: 1114] */
         .footer {
             position: relative;
             z-index: 10;
             padding-bottom: 40px;
-            width: 100%;
-            text-align: center;
         }
 
+        /* Primary Logo (Vertical) [cite: 73, 74] */
         .logo-img {
-            height: 65px; /* Minimum size requirement [cite: 1026] */
+            height: 65px; /* Minimum size: 65px [cite: 112] */
             width: auto;
         }
     </style>
