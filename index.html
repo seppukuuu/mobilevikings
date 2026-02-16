@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mobile Vikings - Touch Fix</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Mobile Vikings - MrAlex Font</title>
     <style>
+        /* Het nieuwe font inladen */
+        @font-face {
+            font-family: "MrAlex-Regular";
+            src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.eot");
+            src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.svg#MrAlex-Regular")format("svg");
+        }
+
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             background-color: #000;
+            /* Rode bolletjes op de achtergrond */
             background-image: radial-gradient(#ff0000 1.2px, transparent 1.2px);
             background-size: 20px 20px;
             color: #fff;
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: "MrAlex-Regular", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -31,20 +42,22 @@
         }
 
         h1 {
-            font-size: 16vw; 
-            line-height: 0.9;
-            margin: 0 0 30px 0;
-            text-shadow: 2px 2px 0px #e30613;
+            /* Gebruik vw voor perfecte schaling op gsm */
+            font-size: 15vw; 
+            line-height: 1.0;
+            margin: 0 0 35px 0;
             text-transform: uppercase;
+            /* De witte letters met de rode outline schaduw */
+            text-shadow: 2.5px 2.5px 0px #e30613;
         }
 
-        /* De knop met verbeterde touch-states */
+        /* De knop met feedback */
         .viking-button {
             background-color: #e30613;
             color: #fff;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            padding: 15px 0;
+            font-family: "MrAlex-Regular", sans-serif;
+            font-size: 2.2rem;
+            padding: 16px 0;
             border: none;
             border-radius: 12px;
             text-transform: uppercase;
@@ -53,33 +66,29 @@
             cursor: pointer;
             position: relative;
             
-            /* De 3D schaduw */
+            /* De 3D zwarte schaduw */
             box-shadow: 6px 6px 0px #000;
-            filter: drop-shadow(0 0 15px rgba(227, 6, 19, 0.7));
+            /* De rode gloed */
+            filter: drop-shadow(0 0 12px rgba(227, 6, 19, 0.8));
             
-            /* Zorgt voor een vloeiende klik-animatie */
             transition: all 0.05s linear;
-            
-            /* Voorkom dat de gsm tekst selecteert bij het klikken */
             user-select: none;
-            -webkit-user-select: none;
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* EFFECT OP GSM: De knop zakt fysiek in als je hem aanraakt */
+        /* Actieve klik-staat voor gsm */
         .viking-button:active {
-            transform: translate(4px, 4px); /* Schuift naar de plek van de schaduw */
-            box-shadow: 0px 0px 0px #000;   /* Schaduw verdwijnt */
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #000;
             filter: drop-shadow(0 0 5px rgba(227, 6, 19, 1));
-            background-color: #b3050f; /* Wordt iets donkerder bij indrukken */
         }
 
         .footer {
-            padding-bottom: 30px;
+            padding-bottom: 40px;
         }
 
         .logo-img {
-            width: 140px;
+            width: 150px;
             height: auto;
         }
     </style>
@@ -89,7 +98,7 @@
     <div class="content">
         <h1>Haal<br>zoveel<br>mogelijk<br>uit je</h1>
         
-        <button class="viking-button" onmousedown="" ontouchstart="">
+        <button class="viking-button">
             Internet
         </button>
     </div>
