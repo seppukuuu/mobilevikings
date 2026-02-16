@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mobile Vikings - Brand Official</title>
+    <title>Mobile Vikings - Mobile Layout Fix</title>
     <style>
-        /* Typography: Loading the primary brand font */
+        /* 3.1 PRIMARY TYPOGRAPHY: Mr. Alex Bold */
         @font-face {
             font-family: "MrAlex-Bold";
             src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2") format("woff2");
@@ -16,99 +16,97 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            /* Removes the default blue highlight on tap for mobile browsers */
+            /* Verwijdert de blauwe highlight bij tikken op gsm */
             -webkit-tap-highlight-color: transparent;
         }
 
         html, body {
-            margin: 0;
-            padding: 0;
             width: 100%;
-            height: 100%;
-            background-color: #000000; /* Primary brand black */
+            height: 100dvh; /* Gebruikt de volledige hoogte van het mobiele scherm */
+            background-color: #000000; /* Primary Black: #000000 */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            overflow-x: hidden;
-            /* Prevents text selection during repeated taps */
+            overflow: hidden; /* Voorkomt scrollen zodat alles in beeld blijft */
             user-select: none;
         }
 
-        /* Background Pattern: Supportive red dots */
+        /* Achtergrondpatroon: Rode bolletjes */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
+            /* Primary Red: #cd0400 */
             background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px);
             background-size: 25px 25px;
             z-index: 1;
             opacity: 0.35;
         }
 
-        .container {
+        /* Container vult de beschikbare ruimte tussen de bovenkant en het logo */
+        .main-content {
             position: relative;
             z-index: 10;
             width: 100%;
-            padding: 0 10px;
-            text-align: center;
-            margin-top: auto;
-            margin-bottom: auto;
+            flex: 1; /* Neemt alle beschikbare ruimte in */
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center; /* Centreert de afbeelding en knop verticaal */
+            padding: 20px;
         }
 
+        /* De headline afbeelding MB.png */
         .headline-img {
-            /* Large display for mobile impact */
-            width: 115%; 
-            max-width: 800px;
+            width: 100%; /* Zorgt dat de afbeelding nooit buiten het scherm gaat */
+            max-width: 400px; /* Limiet voor grotere telefoons */
             height: auto;
-            display: block;
-            margin: 0 auto 20px auto;
-            /* Depth shadow specified in brand guidelines [cite: 3] */
-            filter: drop-shadow(6px 6px 0px #000000);
+            object-fit: contain;
+            margin-bottom: 20px;
+            /* Harde zwarte schaduw conform Brand Guide */
+            filter: drop-shadow(4px 4px 0px #000000);
             pointer-events: none;
         }
 
+        /* 3.3 CALL TO ACTION: Rode knop met ronde hoeken */
         .viking-button {
-            background-color: #cd0400; /* Primary brand red */
+            background-color: #cd0400; /* Primary Red */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
-            font-size: 2.2rem;
-            padding: 16px 0;
+            font-size: 2rem;
+            padding: 14px 0;
             border: none;
-            border-radius: 8px; /* Subtle rounding as per brand guide [cite: 3] */
+            border-radius: 8px; /* Subtiele afronding */
             text-transform: uppercase;
-            width: 90%;
-            max-width: 320px;
+            width: 100%;
+            max-width: 300px;
             cursor: pointer;
-            position: relative;
             box-shadow: 6px 6px 0px #000000;
-            filter: drop-shadow(0 0 15px rgba(205, 4, 0, 0.6));
-            /* Fast transition for immediate haptic feedback */
-            transition: transform 0.05s, box-shadow 0.05s;
-            display: block;
+            filter: drop-shadow(0 0 10px rgba(205, 4, 0, 0.5));
+            transition: transform 0.05s linear, box-shadow 0.05s linear;
         }
 
-        /* Direct visual feedback when touching the screen on mobile */
+        /* Visuele klik-feedback op gsm */
         .viking-button:active {
             transform: translate(4px, 4px);
-            box-shadow: 0px 0px 0px #000000;
+            box-shadow: 1px 1px 0px #000000;
         }
 
+        /* 1.7.1 LOGO POSITIONING: Gecentreerd onderaan */
         .footer {
             position: relative;
             z-index: 10;
-            padding-bottom: 40px;
             width: 100%;
-            text-align: center;
+            padding-bottom: 30px; /* Ruimte onderaan het logo */
+            display: flex;
+            justify-content: center;
+            background: transparent;
         }
 
         .logo-img {
-            /* Minimum required height for brand logo visibility [cite: 3] */
+            /* Minimale hoogte volgens brandbook: 65px */
             height: 65px;
             width: auto;
         }
@@ -116,8 +114,8 @@
 </head>
 <body>
 
-    <div class="container">
-        <img src="MB.png" alt="Haal alles uit je data" class="headline-img">
+    <div class="main-content">
+        <img src="MB.png" alt="Haal zoveel mogelijk uit je" class="headline-img">
         
         <button type="button" class="viking-button">
             Internet
