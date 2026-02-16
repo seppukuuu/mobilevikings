@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mobile Vikings - Mr Alex Edition</title>
+    <title>Mobile Vikings - Brand Guide Compliant</title>
     <style>
-        /* Het Mr Alex font inladen via jouw links */
+        /* 3.1 PRIMARY TYPOGRAPHY: Mr. Alex Bold  */
         @font-face {
-            font-family: "MrAlex-Regular";
-            src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.eot");
-            src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.eot?#iefix")format("embedded-opentype"),
-            url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2")format("woff2"),
-            url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff")format("woff"),
-            url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.ttf")format("truetype"),
-            url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.svg#MrAlex-Regular")format("svg");
+            font-family: "MrAlex-Bold";
+            src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2") format("woff2");
+            font-weight: bold;
+        }
+
+        /* 3.2 SECONDARY TYPOGRAPHY: Foro Sans [cite: 1220] */
+        @font-face {
+            font-family: "Foro-Sans";
+            src: url("https://db.onlinewebfonts.com/t/7901306f47796f642646638848d5b888.woff2") format("woff2");
         }
 
         * {
@@ -21,23 +23,31 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        /* 2.1 PRIMARY COLORS: Black #000000 [cite: 1132] */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #000;
-            /* De rode bolletjes direct op de body */
-            background-image: radial-gradient(#ff0000 1.2px, transparent 1.2px);
-            background-size: 20px 20px;
-            color: #fff;
-            /* Mr Alex als standaard font voor de hele pagina */
-            font-family: "MrAlex-Regular", sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "Foro-Sans", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             overflow: hidden;
+        }
+
+        /* 5.1 PATTERNS: Supportive role (max 5-10% dominance)  */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px); /* 2.1 PRIMARY RED [cite: 1137] */
+            background-size: 25px 25px;
+            z-index: -1;
+            opacity: 0.3; /* Pattern is supportive, not dominant [cite: 1274, 1368] */
         }
 
         .content {
@@ -47,61 +57,65 @@
             margin-bottom: auto;
         }
 
+        /* 3.1 HEADLINES: Mr. Alex Bold with Red Dropshadow [cite: 1192, 1206] */
         h1 {
-            font-size: 15vw; 
-            line-height: 1.0;
-            margin: 0 0 35px 0;
+            font-family: "MrAlex-Bold", sans-serif;
+            font-size: 14vw; 
+            line-height: 1.0; /* Line spacing is tight for headlines [cite: 1210] */
+            margin: 0 0 30px 0;
             text-transform: uppercase;
-            font-family: "MrAlex-Regular", sans-serif;
-            /* De rode schaduw aangepast aan de dikte van Mr Alex */
-            text-shadow: 2.5px 2.5px 0px #e30613;
+            /* Official red dropshadow line for depth [cite: 1206, 1214] */
+            text-shadow: 3px 3px 0px #cd0400; 
         }
 
+        /* 3.3 CALL TO ACTION: Red box with subtle round corners  */
         .viking-button {
-            background-color: #e30613;
-            color: #fff;
-            font-family: "MrAlex-Regular", sans-serif;
+            background-color: #cd0400; /* PRIMARY RED [cite: 1137] */
+            color: #ffffff;
+            font-family: "MrAlex-Bold", sans-serif;
             font-size: 2.2rem;
             padding: 16px 0;
             border: none;
-            border-radius: 12px;
+            border-radius: 8px; /* Subtle round corners [cite: 1242] */
             text-transform: uppercase;
             width: 100%;
-            max-width: 300px;
+            max-width: 310px;
             cursor: pointer;
             position: relative;
-            box-shadow: 6px 6px 0px #000;
-            filter: drop-shadow(0 0 12px rgba(227, 6, 19, 0.8));
+            
+            /* Visual feedback for mobile interaction */
+            box-shadow: 5px 5px 0px #000000;
             transition: all 0.05s linear;
             user-select: none;
         }
 
-        /* Klik effect voor mobiel */
         .viking-button:active {
-            transform: translate(4px, 4px);
-            box-shadow: 0px 0px 0px #000;
-            filter: drop-shadow(0 0 5px rgba(227, 6, 19, 1));
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0px #000000;
         }
 
+        /* 1.7.1 POSITIONING: Centered [cite: 1065] */
         .footer {
             padding-bottom: 40px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
+        /* 1.1 PRIMARY LOGO (Vertical) [cite: 988] */
         .logo-img {
-            width: 150px;
-            height: auto;
+            height: 65px; /* Minimum size requirement  */
+            width: auto;
         }
 
-        /* De merknaam onder het logo ook in Mr Alex */
         .brand-name {
-            font-family: "MrAlex-Regular", sans-serif;
-            font-size: 1.2rem;
+            font-family: "MrAlex-Bold", sans-serif;
+            font-size: 1rem;
             letter-spacing: 2px;
             text-transform: uppercase;
+            color: #ffffff;
         }
     </style>
 </head>
