@@ -3,35 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mobile Vikings - Brand Guide Compliant</title>
+    <title>Mobile Vikings - Haal alles uit je internet</title>
     <style>
-        /* 3.1 PRIMARY TYPOGRAPHY: Mr. Alex Bold  */
+        /* 3.1 PRIMARY TYPOGRAPHY: Mr. Alex Bold */
         @font-face {
             font-family: "MrAlex-Bold";
             src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2") format("woff2");
             font-weight: bold;
         }
 
-        /* 3.2 SECONDARY TYPOGRAPHY: Foro Sans [cite: 1220] */
-        @font-face {
-            font-family: "Foro-Sans";
-            src: url("https://db.onlinewebfonts.com/t/7901306f47796f642646638848d5b888.woff2") format("woff2");
-        }
-
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* 2.1 PRIMARY COLORS: Black #000000 [cite: 1132] */
         html, body {
-            margin: 0;
-            padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #000000;
+            background-color: #000000; /* [cite: 1132] */
             color: #ffffff;
-            font-family: "Foro-Sans", sans-serif;
+            font-family: "MrAlex-Bold", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -39,89 +32,82 @@
             overflow: hidden;
         }
 
-        /* 5.1 PATTERNS: Supportive role (max 5-10% dominance)  */
+        /* ACHTERGROND MET BOLLETJES (PATTERN) OVERAL */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px); /* 2.1 PRIMARY RED [cite: 1137] */
+            /* Primary Red dots  */
+            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px);
             background-size: 25px 25px;
-            z-index: -1;
-            opacity: 0.3; /* Pattern is supportive, not dominant [cite: 1274, 1368] */
+            z-index: 1;
+            opacity: 0.4;
         }
 
-        .content {
-            width: 90%;
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding: 0 20px;
             text-align: center;
             margin-top: auto;
             margin-bottom: auto;
+            background: transparent; /* Verwijder zwarte box */
         }
 
-        /* 3.1 HEADLINES: Mr. Alex Bold with Red Dropshadow [cite: 1192, 1206] */
         h1 {
-            font-family: "MrAlex-Bold", sans-serif;
             font-size: 14vw; 
-            line-height: 1.0; /* Line spacing is tight for headlines [cite: 1210] */
-            margin: 0 0 30px 0;
             text-transform: uppercase;
-            /* Official red dropshadow line for depth [cite: 1206, 1214] */
+            color: #ffffff;
+            /* BRAND GUIDE SPACING: Line spacing is 7 pts more than the font size  */
+            /* In CSS vertalen we dit naar een ruimere line-height */
+            line-height: 1.1; 
+            margin-bottom: 30px;
+            /* Official red dropshadow line [cite: 1214] */
             text-shadow: 3px 3px 0px #cd0400; 
         }
 
-        /* 3.3 CALL TO ACTION: Red box with subtle round corners  */
+        /* De knop (CTA) [cite: 1241] */
         .viking-button {
-            background-color: #cd0400; /* PRIMARY RED [cite: 1137] */
+            background-color: #cd0400; /*  */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
             font-size: 2.2rem;
-            padding: 16px 0;
+            padding: 14px 0;
             border: none;
             border-radius: 8px; /* Subtle round corners [cite: 1242] */
             text-transform: uppercase;
             width: 100%;
-            max-width: 310px;
+            max-width: 320px;
             cursor: pointer;
-            position: relative;
-            
-            /* Visual feedback for mobile interaction */
-            box-shadow: 5px 5px 0px #000000;
+            box-shadow: 6px 6px 0px #000000;
+            filter: drop-shadow(0 0 15px rgba(205, 4, 0, 0.7));
             transition: all 0.05s linear;
-            user-select: none;
         }
 
         .viking-button:active {
-            transform: translate(3px, 3px);
+            transform: translate(4px, 4px);
             box-shadow: 1px 1px 0px #000000;
         }
 
-        /* 1.7.1 POSITIONING: Centered [cite: 1065] */
+        /* Enkel het logo onderaan [cite: 1114] */
         .footer {
+            position: relative;
+            z-index: 10;
             padding-bottom: 40px;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
+            text-align: center;
         }
 
-        /* 1.1 PRIMARY LOGO (Vertical) [cite: 988] */
         .logo-img {
-            height: 65px; /* Minimum size requirement  */
+            height: 65px; /* Minimum size requirement [cite: 1026] */
             width: auto;
-        }
-
-        .brand-name {
-            font-family: "MrAlex-Bold", sans-serif;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <div class="content">
+    <div class="container">
         <h1>Haal<br>zoveel<br>mogelijk<br>uit je</h1>
         
         <button class="viking-button">
@@ -131,7 +117,6 @@
 
     <div class="footer">
         <img src="https://mobilevikings.be/static/img/logo-white.svg" alt="Mobile Vikings" class="logo-img">
-        <div class="brand-name">Møbile Vikings</div>
     </div>
 
 </body>
