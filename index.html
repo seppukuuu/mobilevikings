@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mobile Vikings - Brand Official</title>
     <style>
-        /* 1. TYPOGRAFIE INLADEN  */
+        /* 1. TYPOGRAFIE INLADEN */
         @font-face {
             font-family: "MrAlex-Bold";
             src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2") format("woff2");
@@ -19,65 +19,68 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* 2. BASIS STYLING & KLEUREN  */
+        /* 2. BASIS STYLING & KLEUREN */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #000000; /* Primary Black  */
+            background-color: #000000; /* Primary Black [cite: 218] */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            overflow: hidden;
+            overflow-x: hidden; /* Voorkomt zijwaarts scrollen door de grote afbeelding */
         }
 
-        /* 3. ACHTERGROND PATROON (Supportive role, max 5% rule)  */
+        /* 3. ACHTERGROND PATROON (Supportive role, max 5% rule) */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px); /* Primary Red  */
+            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px); /* Primary Red [cite: 223] */
             background-size: 25px 25px;
             z-index: 1;
-            opacity: 0.35;
+            opacity: 0.35; /* Supportive role [cite: 438] */
         }
 
         .container {
             position: relative;
             z-index: 10;
             width: 100%;
-            padding: 0 20px;
+            padding: 0 10px;
             text-align: center;
             margin-top: auto;
             margin-bottom: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* 4. HEADLINE AFBEELDING  */
+        /* 4. HEADLINE AFBEELDING - MAXIMAAL GROOT GEMAAKT */
         .headline-img {
-            width: 90%;
-            max-width: 450px;
+            width: 120%; /* Groter dan de schermbreedte voor impact */
+            max-width: 800px; /* Limiet voor grotere schermen */
             height: auto;
             display: block;
-            margin: 0 auto 30px auto;
-            /* Schaduw voor diepte  */
-            filter: drop-shadow(5px 5px 0px #000000);
+            margin: 0 auto 20px auto;
+            /* Schaduw voor diepte volgens brand guide  */
+            filter: drop-shadow(6px 6px 0px #000000);
         }
 
-        /* 5. CALL TO ACTION (CTA) BUTTON  */
+        /* 5. CALL TO ACTION (CTA) BUTTON */
         .viking-button {
-            background-color: #cd0400; /* Primary Red  */
+            background-color: #cd0400; /* Primary Red [cite: 223] */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
             font-size: 2.2rem;
-            padding: 14px 0;
+            padding: 16px 0;
             border: none;
-            border-radius: 8px; /* Subtle round corners  */
+            border-radius: 8px; /* Subtle round corners [cite: 328] */
             text-transform: uppercase;
-            width: 100%;
+            width: 90%;
             max-width: 320px;
             cursor: pointer;
             position: relative;
@@ -89,13 +92,13 @@
             user-select: none;
         }
 
-        /* Touch feedback  */
+        /* Touch feedback */
         .viking-button:active {
             transform: translate(4px, 4px);
             box-shadow: 0px 0px 0px #000000;
         }
 
-        /* 6. LOGO POSITIONING  */
+        /* 6. LOGO POSITIONING */
         .footer {
             position: relative;
             z-index: 10;
@@ -103,7 +106,7 @@
         }
 
         .logo-img {
-            height: 65px; /* Minimum size: 65px  */
+            height: 65px; /* Minimum size: 65px [cite: 112] */
             width: auto;
         }
     </style>
@@ -124,4 +127,3 @@
 
 </body>
 </html>
-
