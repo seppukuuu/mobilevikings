@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mobile Vikings - Brand Official</title>
     <style>
+        /* 3.1 PRIMARY TYPOGRAPHY: Mr. Alex Bold */
         @font-face {
             font-family: "MrAlex-Bold";
             src: url("https://db.onlinewebfonts.com/t/2791267c488b942eb80f4f69ea85603e.woff2") format("woff2");
@@ -15,86 +16,80 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            /* Verwijder de standaard blauwe highlight bij tikken op mobiel */
             -webkit-tap-highlight-color: transparent;
         }
 
         html, body {
-            margin: 0;
-            padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #000000;
+            background-color: #000000; /* Primary color: Black [cite: 218] */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            overflow-x: hidden;
-            /* Voorkom dat tekst geselecteerd wordt bij veelvuldig tikken */
-            user-select: none;
+            overflow: hidden;
         }
 
+        /* 5.1 PATTERNS: Supportive function (Opacity 0.4 voor de 5% dominantie regel [cite: 271]) */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px);
+            background-image: radial-gradient(#cd0400 1.2px, transparent 1.2px); /* Primary Red [cite: 223] */
             background-size: 25px 25px;
             z-index: 1;
-            opacity: 0.35;
+            opacity: 0.4;
         }
 
         .container {
             position: relative;
             z-index: 10;
             width: 100%;
-            padding: 0 10px;
-            text-align: center;
-            margin-top: auto;
-            margin-bottom: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            flex-grow: 1;
         }
 
+        /* EXTRA GROTE STYLING VOOR MB.PNG */
         .headline-img {
-            width: 120%; 
-            max-width: 800px;
+            width: 110%; /* Vergroot naar over-size breedte */
+            max-width: 900px; /* Ruimere limiet voor grote schermen */
             height: auto;
+            margin-bottom: 30px;
+            /* Zwarte diepteschaduw conform brandbook pagina 24 [cite: 303] */
+            filter: drop-shadow(6px 6px 0px #000000); 
             display: block;
-            margin: 0 auto 20px auto;
-            filter: drop-shadow(6px 6px 0px #000000);
-            pointer-events: none; /* Zorgt dat de afbeelding kliks niet blokkeert */
         }
 
+        /* 3.3 CALL TO ACTION: Red box met subtiele ronde hoeken [cite: 328] */
         .viking-button {
-            background-color: #cd0400;
+            background-color: #cd0400; /* Primary Red [cite: 223] */
             color: #ffffff;
             font-family: "MrAlex-Bold", sans-serif;
             font-size: 2.2rem;
             padding: 16px 0;
             border: none;
-            border-radius: 8px;
+            border-radius: 8px; /* Subtiele afronding [cite: 328] */
             text-transform: uppercase;
             width: 90%;
             max-width: 320px;
             cursor: pointer;
             position: relative;
             box-shadow: 6px 6px 0px #000000;
-            filter: drop-shadow(0 0 15px rgba(205, 4, 0, 0.6));
-            /* Snelle transitie voor directe feedback op touch */
-            transition: transform 0.05s, box-shadow 0.05s;
-            display: block;
+            filter: drop-shadow(0 0 15px rgba(205, 4, 0, 0.7));
+            transition: all 0.05s linear;
         }
 
-        /* Deze actie werkt direct zodra je je vinger op het scherm zet */
         .viking-button:active {
             transform: translate(4px, 4px);
-            box-shadow: 0px 0px 0px #000000;
+            box-shadow: 1px 1px 0px #000000;
         }
 
+        /* 1.7 LOGO POSITIONING: Gecentreerd [cite: 151] */
         .footer {
             position: relative;
             z-index: 10;
@@ -104,7 +99,7 @@
         }
 
         .logo-img {
-            height: 65px;
+            height: 65px; /* Minimum size: 65px [cite: 112] */
             width: auto;
         }
     </style>
@@ -112,9 +107,9 @@
 <body>
 
     <div class="container">
-        <img src="MB.png" alt="Haal alles uit je data" class="headline-img">
+        <img src="MB.png" alt="Haal zoveel mogelijk uit je" class="headline-img">
         
-        <button type="button" class="viking-button">
+        <button class="viking-button">
             Internet
         </button>
     </div>
